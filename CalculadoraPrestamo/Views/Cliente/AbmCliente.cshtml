@@ -1,0 +1,25 @@
+﻿@model CalculadoraPrestamo.Models.Cliente
+
+<h1>Adminsitrador de Clientes</h1>
+<a href="@Url.Action("CrearCliente")" class="btn btn-primary">Crear Cliente</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>DNI</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>@Model.Nombre</td>
+                <td>@Model.Direccion</td>
+                <td>@Model.DNI</td>
+            </tr>
+    </tbody>
+</table>
+
+
+
+

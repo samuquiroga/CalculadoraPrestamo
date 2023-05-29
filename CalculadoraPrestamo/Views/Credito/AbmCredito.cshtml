@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Administrador de Creditos</h1>
+
+@*@model List<Credito>  
+
+<table class="TablaCredito">
+    <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+    </tr>
+ @foreach (var credito in Model)
+    {
+        <tr>
+            <td>@credito.Id</td>
+            <td>@credito.Nombre</td>
+            <td>@credito.Descripcion</td>
+    }
+</table>
+*@
