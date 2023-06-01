@@ -1,25 +1,35 @@
-﻿@model CalculadoraPrestamo.Models.Cliente
+﻿@model IEnumerable<CalculadoraPrestamo.Models.Cliente>
 
 <h1>Adminsitrador de Clientes</h1>
 <a href="@Url.Action("CrearCliente")" class="btn btn-primary">Crear Cliente</a>
 
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Dirección</th>
-            <th>DNI</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="container-lg col-4">
+    <table class="table table-bordered" id="" width="100%" cellspacing="0">
+        <thead>
             <tr>
-                <td>@Model.Nombre</td>
-                <td>@Model.Direccion</td>
-                <td>@Model.DNI</td>
+                <th>@Html.DisplayNameFor(m => m.Nombre)</th>
+                <th>@Html.DisplayNameFor(m => m.Direccion)</th>
+                <th>@Html.DisplayNameFor(m => m.DNI)</th>
             </tr>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.Nombre)</td>
+                    <td>@Html.DisplayFor(m => item.Direccion)</td>
+                    <td>@Html.DisplayFor(m => item.DNI)</td>
+                    <td>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
 
 
 
 
+
+
+</div>
