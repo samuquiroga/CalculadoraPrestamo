@@ -27,11 +27,7 @@ namespace CalculadoraPrestamo.Controllers
                 }
             return View(cliente);
         }
-        public IActionResult AbmCliente()
-        {
-            List<Cliente> ListaCliente = ObtenerListaClientesDesdeLaBaseDeDatos();
-            return View();
-        }
+       
 
         public IActionResult CrearCliente() { return View(); }
 
@@ -43,6 +39,11 @@ namespace CalculadoraPrestamo.Controllers
          return ListaCliente;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> AbmCliente()
+        {
+            return View(await _context.Cliente.ToListAsync());
+        }
 
 
 
