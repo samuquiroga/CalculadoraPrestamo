@@ -16,18 +16,20 @@ namespace CalculadoraPrestamo.Controllers
             _context = context;
         }
         //Metodo post
+
         [HttpPost]
         public async Task<IActionResult> CrearCliente(Cliente cliente)
         {
-                if (ModelState.IsValid)
-                {
+            if (ModelState.IsValid)
+            {
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-                }
+                TempData["Mensaje"] = "Cliente creado satisfactoriamente";
+                return RedirectToAction("AbmCliente", "Cliente"); 
+            }
             return View(cliente);
         }
-       
+
 
         public IActionResult CrearCliente() { return View(); }
 
