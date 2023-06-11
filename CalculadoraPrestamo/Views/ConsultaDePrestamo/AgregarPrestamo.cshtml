@@ -1,0 +1,34 @@
+﻿@model CalculadoraPrestamo.Models.ConsultaPrestamo
+
+@{
+    ViewData["Title"] = "`Crear Prestamo";
+
+    <div class="container-lg col-4">
+        <h1>Crear Prestamo</h1>
+        <form asp-action="CrearPrestamo" method="POST">
+            <div class="input-group mb-3 w-100">
+                <ul>
+                    <li>
+                        <label asp-for="Nombre" class="input-group-text">Nombre</label>
+                        <input asp-for="Nombre" type="text" class="form-control" placeholder="Ingresar Nombre" id="nombre">
+                    </li>
+                    <li>
+                        <label asp-for="Direccion" class="input-group-text">Direccion</label>
+                        <input asp-for="Direccion" type="text" class="form-control" placeholder="Ingresar Direccion" id="direccion">
+                    </li>
+                    <li>
+                        <label asp-for="DNI" class="input-group-text">DNI</label>
+                        <input asp-for="DNI" type="text" class="form-control" placeholder="Ingresar DNI" id="DNI">
+                    </li>
+                </ul>
+            </div>
+            <!-- Resto del contenido de la vista -->
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+        </form>
+
+    </div>
+
+}
+
